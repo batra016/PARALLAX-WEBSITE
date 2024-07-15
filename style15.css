@@ -1,0 +1,109 @@
+*{
+    /* best practice always use it */
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+#wrapper{
+    /* we need the whole viewport to be covered */
+    height: 100vh;
+    /* we dont want the image to get scroll in x axis */
+    overflow-x: hidden; 
+    /* image y axis mai srcoll chahiye */
+    overflow-y: auto;
+    /* to activte 3d transform we need to define the perspective that is distance from our eyes to the z axis  its value dosent matter kuch bhi dedo*/
+    perspective: 10px;
+}
+.container{
+    /* to overlap the image we have to place them with respect to the container so will give it relative position and absolute position will be given to the other 2 as absolute is relative to the parent element which is non static */
+    position: relative;
+    display: flex;
+    /* to place the content in the center */
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    /* to get parallax effect -- The transform-style CSS property sets whether children of an element are positioned in the 3D space*/
+    transform-style: preserve-3d; 
+    /* z index is to specify konsi layer kiske uppar ani chahiye */
+    z-index: -1;
+
+}
+.background, .foreground{
+    /* to overlap the images */
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    /* to move the text over upper layer */
+    z-index: -1;
+    /* fit image in container ki whole width cover */
+    object-position: cover;
+}
+/* to add parallax effect haame background image ko door krna hai so will use translate abh door krenge toh image will appear short so to zoom it will use scale  */
+.background{
+    transform: translateZ(-40px) scale(5.3);
+}
+.foreground{
+    transform: translateZ(-20px) scale(3);
+}
+h1{
+    /* these values will be given by the designer */
+    position: absolute;
+    font-size: 8rem;
+    top: 5rem;
+    letter-spacing: 4px;
+    color: white;
+    text-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+section{
+    background-color: rgb(45,45,45);
+    color: white;
+    padding: 5rem 0;
+    /* top bottom , left right */
+}
+/* refer notes for what is the diff between backgroung-image property of css and img tag in html */
+.bg1{
+    background-image: url(sport-1.jpg);
+}
+.bg2{
+    background-image: url(sport-2.jpg);
+}
+.bg3{
+    background-image: url(sport-3.jpg);
+}
+.secheading{
+    font-size: 4rem;
+    padding: 0 8rem;
+}
+.text{
+    font-size: 1.2rem;
+    padding: 0 8rem;
+    margin:5rem 0;
+}
+.bg{
+    /* we have kept position as absolute becuse we want to overlap text over it */
+    position:relative;
+
+    /* haame image pooei width ki chahaiye */
+    width: 100%;
+    
+    /* backgroung image is not moving it is fixed */
+    background-attachment: fixed;
+    height: 400px;
+
+    /* we have to place the position in the manner that is covers the whole bg and is placed in center */
+    background-position: center;
+    background-size: cover;
+}
+.desc{
+    position: absolute;
+    background-color: white;
+    padding: 0.5rem 2.5rem;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    color: black;
+    font-size: 2.8rem;
+    font-weight: 600;
+
+}
