@@ -1,1 +1,2 @@
 # PARALLAX-WEBSITE
+The Parallax Website is an engaging and visually appealing web application that utilizes HTML, CSS, and JavaScript to create a dynamic scrolling experience. By incorporating parallax effects, where background images move slower than foreground content, this website offers a unique and immersive user experience. It showcases smooth animations, responsive design, and interactive elements, making it perfect for storytelling, portfolio displays, or enhancing the visual impact of any web project.
